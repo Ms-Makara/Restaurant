@@ -9,19 +9,17 @@ package Login;
  *
  * @author Shuqi
  */
-public class RestaurantManager {
+public class RestaurantManager extends User{
     
-    private String username;
-    private String password;
-    private int usertype;
+    
 
     public RestaurantManager(){}
     
     public RestaurantManager(String username, String password, int usertype)
     {
-        this.username=username;
-        this.password=password;
-        this.usertype=usertype;
+        super.username=username;
+        super.password=password;
+        super.usertype=usertype;
     }
     /**
      * @return the username
@@ -34,7 +32,7 @@ public class RestaurantManager {
      * @param username the username to set
      */
     public void setUsername(String username) {
-        this.username = username;
+        super.username = username;
     }
 
     /**
@@ -48,7 +46,7 @@ public class RestaurantManager {
      * @param password the password to set
      */
     public void setPassword(String password) {
-        this.password = password;
+        super.password = password;
     }
 
     /**
@@ -62,7 +60,7 @@ public class RestaurantManager {
      * @param usertype the usertype to set
      */
     public void setUsertype(int usertype) {
-        this.usertype = usertype;
+        super.usertype = usertype;
     }
     
 }

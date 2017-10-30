@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50627
 File Encoding         : 65001
 
-Date: 2017-10-27 15:00:40
+Date: 2017-10-30 12:08:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -146,18 +146,3 @@ INSERT INTO `users` VALUES ('1', 'Anna', '1234', '1', null);
 INSERT INTO `users` VALUES ('2', 'Sunny', '2586', '2', null);
 INSERT INTO `users` VALUES ('3', 'Ben', '4793', '3', '4586159752312264');
 INSERT INTO `users` VALUES ('4', 'Alice', '7739', '3', '1576359812036645');
-
--- ----------------------------
--- Table structure for `user_restaurant`
--- ----------------------------
-DROP TABLE IF EXISTS `user_restaurant`;
-CREATE TABLE `user_restaurant` (
-  `userID` int(11) NOT NULL,
-  `restaurantID` int(11) NOT NULL,
-  `count` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`userID`,`restaurantID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of user_restaurant
--- ----------------------------

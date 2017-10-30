@@ -11,17 +11,15 @@ package Login;
  */
 public class SystemManager extends User{
     
-    private String username;
-    private String password;
-    private int usertype;
+    
 
     public SystemManager(){}
     
     public SystemManager(String username, String password, int usertype)
     {
-        this.username=username;
-        this.password=password;
-        this.usertype=usertype;
+        super.username=username;
+        super.password=password;
+        super.usertype=usertype;
     }
     
     /**
@@ -35,7 +33,7 @@ public class SystemManager extends User{
      * @param username the username to set
      */
     public void setUsername(String username) {
-        this.username = username;
+        super.username = username;
     }
 
     /**
@@ -49,7 +47,7 @@ public class SystemManager extends User{
      * @param password the password to set
      */
     public void setPassword(String password) {
-        this.password = password;
+        super.password = password;
     }
 
     /**
@@ -63,7 +61,7 @@ public class SystemManager extends User{
      * @param usertype the usertype to set
      */
     public void setUsertype(int usertype) {
-        this.usertype = usertype;
+        super.usertype = usertype;
     }
     
     

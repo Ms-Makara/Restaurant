@@ -12,9 +12,9 @@ package Login;
 public abstract class User {
     
      
-    private String username;
-    private String password;
-    private int usertype;
+    protected String username;
+    protected String password;
+    protected int usertype;
 
     
     /**

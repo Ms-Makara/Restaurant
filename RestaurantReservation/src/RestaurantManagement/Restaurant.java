@@ -6,6 +6,7 @@
 package RestaurantManagement;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -17,12 +18,12 @@ public class Restaurant {
     private String restaurant_type;
     private String decription;
     private int tables;
-    private ArrayList<Menu> menus;
+    private List<Menu> menus;
     
     public Restaurant()
     {}
     
-    public Restaurant(String restaurant_name, String restaurant_type, String decription, int tables, ArrayList<Menu> menus )
+    public Restaurant(String restaurant_name, String restaurant_type, String decription, int tables, List<Menu> menus )
     {
         this.restaurant_name=restaurant_name;
         this.restaurant_type=restaurant_type;
@@ -90,14 +91,14 @@ public class Restaurant {
     /**
      * @return the menus
      */
-    public ArrayList<Menu> getMenus() {
+    public List<Menu> getMenus() {
         return menus;
     }
 
     /**
      * @param menus the menus to set
      */
-    public void setMenus(ArrayList<Menu> menus) {
+    public void setMenus(List<Menu> menus) {
         this.menus = menus;
     }
 
