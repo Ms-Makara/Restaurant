@@ -1,4 +1,4 @@
-package Model;
+package Login;
 
 import java.sql.ResultSet;
 import java.util.Vector;
