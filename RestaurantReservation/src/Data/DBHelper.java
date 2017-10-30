@@ -6,7 +6,6 @@
 package Data;
 
 import static Data.DatabaseConnector.getCon;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -34,12 +33,14 @@ public class DBHelper extends DatabaseConnector{
         return rs;
     }
     
+    
     public static int ExecuteUpdate(String sql)
     {
         con=getCon();
         int flag=0;
         try {         
             pst=con.prepareStatement(sql);
+           
             flag= pst.executeUpdate();  
         } catch (SQLException ex) {
           Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);

@@ -1,5 +1,6 @@
 package UI;
 
+import Login.LoginModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,7 +10,7 @@ import javax.swing.JPanel;
 public class LoginListener implements ActionListener
 {
 	
-	Model.LoginModel lm = null;
+	LoginModel lm = null;
 	LoginWindow lw;
 	String username,pwd;
 	
@@ -27,7 +28,7 @@ public class LoginListener implements ActionListener
 			username = lw.jtf.getText();
 			pwd = lw.jpf.getText();
 			
-			lm = new Model.LoginModel(username,pwd);
+			lm = new LoginModel(username,pwd);
 			
 			System.out.println(lm.verify());
 		}

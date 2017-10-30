@@ -10,7 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -45,10 +44,41 @@ public class RestaurantModel {
         return restaurants;
     }
     
+    public static List<Restaurant> querySearchedRestaurant(int type, String search)
+    {
+        List<Restaurant> restaurants= new ArrayList<Restaurant>();
+        String sql="select restaurant_name,t.type,description,tables,restaurant_ID from restaurants r,restaurant_type t where r.restaurant_typeID=t.restaurant_typeID ";
+        if(type==0)
+        {
+            sql+="and restaurant_name='"+search+"'"; 
+        }
+        if(type==1)
+        {
+            sql+="and t.type='"+search+"'";
+        }
+        rs=db.ExecuteQuery(sql);
+        try {  
+            while(rs.next()){
+                Restaurant restaurant=new Restaurant();
+                MenuModel aModel=new MenuModel();
+                restaurant.setRestaurant_name(rs.getString(1));
+                restaurant.setRestaurant_type(rs.getString(2));
+                restaurant.setDecription(rs.getString(3));
+                restaurant.setTables(rs.getInt(4));
+                restaurant.setMenus(aModel.queryAllMenus(rs.getInt(5)));
+                restaurants.add(restaurant);
+                System.out.println(rs.getString(1));
+            }   
+        } catch (SQLException ex) {
+            Logger.getLogger(RestaurantModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return restaurants;
+    }
+    
     /*public static void main(String[] args)
     {
         List<Restaurant> restaurants= new ArrayList<Restaurant>();
-        restaurants=queryAllRestaurant();
+        restaurants=querySearchedRestaurant(int type);
         for(int i=0;i<restaurants.size();i++)
         {
             System.out.println(restaurants.get(i).getMenus().get(0).getDescription());
